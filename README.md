@@ -1,146 +1,192 @@
-# NETWORKWALKS-EMMANUEL-B084M-WK2-CYBERSEC-FOOTPRINTING-RECONNAISSANCE-KALI-TOOLS
-Hands-on web reconnaissance exercises using Kali Linux as part of my Networkwalks Cybersecurity Internship (Week 2), covering DNS enumeration, HTTP header inspection, WAF detection, WHOIS lookup, technology fingerprinting and DNS resolution
+# NETWORKWALKS B084 – WEEK 2: WEB RECONNAISSANCE
 
+# Cybersecurity & Penetration Testing Internship
 
-The focus of this week's training was Web Reconnaissance using Kali Linux, exploring tools and techniques used to gather publicly available information about websites, understand their underlying technologies, and identify potentially exposed information.
+This repository documents my Week 2 practical activities during the Networkwalks Cybersecurity Internship.
 
-The exercises were performed in my personal cybersecurity homelab for learning and practical experience.
+The focus was Web Reconnaissance using Kali Linux, exploring techniques used to gather publicly available information about a website and understand its digital footprint.
+
+For the practical exercises, I used one domain as the reference target across the different reconnaissance activities. This helped me understand how different tools reveal different aspects of the same website.
 
 # Learning Objectives
 
-Understand the fundamentals of web reconnaissance.
+Understand the role of reconnaissance in penetration testing.
 
-Explore DNS enumeration and domain information gathering.
+Explore DNS records and domain infrastructure.
 
 Inspect HTTP response headers.
 
-Understand Web Application Firewall (WAF) detection.
+Understand Web Application Firewall detection.
 
-Perform WHOIS lookups.
+Retrieve domain registration information.
 
 Identify website technologies using WhatWeb.
 
-Understand DNS resolution and IP address mapping.
+Understand domain-to-IP address resolution.
 
-Tools and Techniques Explored
+Practical Exercises
 
 # 1. DNS Enumeration
 
-Purpose: To gather information about a domain's DNS infrastructure.
+Objective: Gather information about the target domain's DNS infrastructure.
 
 # Activities:
 
-Exploring DNS records.
+Examined available DNS records.
 
-Identifying associated subdomains.
+Explored A, MX, NS and TXT records.
 
-Understanding how DNS information supports reconnaissance.
+Investigated associated subdomains.
+
+Studied how DNS information reveals aspects of domain infrastructure.
+
+Key Learning: DNS enumeration helps identify publicly available information about a domain and its associated services.
 
 # 2. HTTP Header Inspection
 
-Purpose: To examine HTTP response headers returned by web servers.
+Objective: Examine HTTP response headers to understand how the target web server communicates with clients.
 
 # Activities:
 
-Inspecting HTTP response headers.
+Retrieved and inspected HTTP response headers.
 
-Understanding server response information.
+Examined server response information.
 
-Identifying information that may be exposed through HTTP headers.
+Explored security-related headers such as Content-Security-Policy and Strict-Transport-Security.
+
+Reviewed HTTP status codes.
+
+Key Learning: HTTP headers can reveal useful information about server configurations and security policies.
 
 # 3. Web Application Firewall (WAF) Detection
 
-Purpose: To understand how Web Application Firewalls protect web applications.
+Objective: Explore techniques used to identify Web Application Firewalls protecting web applications.
 
 # Activities:
 
-Exploring techniques for identifying WAF technologies.
+Investigated indicators of WAF protection.
 
-Understanding the role of WAFs in web application security.
+Examined HTTP responses for possible WAF-related information.
+
+Studied how WAFs filter and monitor incoming web traffic.
+
+Key Learning: WAF detection helps identify additional security layers protecting web applications.
 
 # 4. WHOIS Lookup
 
-Purpose: To retrieve publicly available domain registration information.
+Objective: Retrieve publicly available registration information associated with the target domain.
 
 # Activities:
 
-Examining domain registration records.
+Examined domain registration records.
 
-Understanding domain ownership and registration details.
+Investigated registrar and registration details.
 
-Exploring how WHOIS information contributes to footprinting.
+Explored name server information.
+
+Reviewed the role of WHOIS in domain footprinting.
+
+Key Learning: WHOIS provides useful background information about domain registration and management.
 
 # 5. Technology Fingerprinting with WhatWeb
 
-Purpose: To identify technologies and frameworks used by websites.
+Objective: Identify technologies and frameworks exposed by the target website.
 
 # Activities:
 
-Exploring website technology detection.
+Used WhatWeb to investigate website technologies.
 
-Identifying technologies and web server information.
+Examined detected web technologies and server information.
 
-Understanding how technology fingerprinting supports security assessments.
+Explored how technology fingerprinting supports security assessments.
+
+Key Learning: Technology fingerprinting helps establish an understanding of the technologies behind a web application.
 
 # 6. DNS Resolution
 
-Purpose: To understand how domain names are translated into IP addresses.
+Objective: Understand how the target domain resolves to its corresponding IP address.
 
 # Activities:
 
-Checking domain-to-IP address resolution.
+Performed domain-to-IP resolution checks.
 
-Understanding DNS lookup results.
+Examined DNS lookup results.
 
-Exploring the relationship between domain names and network addresses.
+Explored the relationship between domain names and IP addresses.
 
-# Practical Work and Evidence
+Key Learning: DNS resolution helps establish how domain names map to network addresses.
 
-This section contains screenshots and outputs from my hands-on exercises.
+# Practical Evidence
 
-Area
+Screenshots and command outputs from the exercises are organized in the following directories:
 
-Evidence
+Exercise
+
+# Screenshot Directory
 
 DNS Enumeration
 
+screenshots/dns
+
 HTTP Header Inspection
+
+screenshots/http-headers/
 
 WAF Detection
 
+screenshots/waf
+
 WHOIS Lookup
+
+screenshots/whois
 
 WhatWeb Fingerprinting
 
+screenshots/whatweb/
+
 DNS Resolution
 
-Screenshots will be added as practical exercises are documented.
+screenshots/dns-resolution/
 
-# Key Lessons Learned
+# Challenges Encountered and Lessons Learned
 
-Reconnaissance is an important initial phase of penetration testing.
+During the practical exercises, I encountered several learning challenges:
 
-DNS records can reveal useful information about domain infrastructure.
+Interpreting DNS records: Understanding the differences between DNS record types and the information each one provides required additional attention.
 
-HTTP headers may expose details about web server configurations.
+Understanding HTTP responses: Distinguishing ordinary server information from security-related headers was an important learning process.
 
-Technology fingerprinting helps identify the technologies behind web applications.
+WAF identification: WAF detection was not always straightforward because different security configurations can produce different response patterns.
 
-Publicly available information can provide valuable insights during security assessments.
+WHOIS information limitations: Some domain registration details may be hidden through privacy protection services.
 
-Reconnaissance findings should be verified before drawing conclusions about security weaknesses.
+Technology fingerprinting: WhatWeb results required careful interpretation because not every technology used by a website is necessarily exposed.
 
-# Important Security Considerations
+Correlating findings: Connecting information from different tools to build a broader picture of one domain required understanding how DNS, web servers and application technologies relate.
 
-Only perform reconnaissance on systems and domains you own or have explicit permission to assess.
+# How I Addressed These Challenges
 
-Do not attempt unauthorized exploitation.
+I focused on understanding the purpose of each tool, reviewing its output and comparing findings across the different exercises. This helped me appreciate that reconnaissance requires technical interpretation rather than simply executing commands.
 
-Avoid publishing sensitive information, credentials, private IP addresses or confidential assessment results.
+# Key Takeaways
 
-Treat publicly available information responsibly.
+Reconnaissance is a fundamental phase of penetration testing.
 
-# Technologies and Tools
+DNS information can reveal important details about domain infrastructure.
+
+HTTP headers provide insights into web server communication and security configurations.
+
+WAFs provide an additional layer of web application protection.
+
+WHOIS contributes to domain footprinting.
+
+Technology fingerprinting helps identify exposed web technologies.
+
+Findings from different reconnaissance techniques complement one another.
+
+Reconnaissance results should be verified before drawing security conclusions.
+
+# Tools and Technologies
 
 Kali Linux
 
@@ -151,7 +197,3 @@ WHOIS
 WhatWeb
 
 HTTP Header Inspection Tools
-
-Web Reconnaissance Techniques
-
-
