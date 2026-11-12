@@ -40,7 +40,7 @@ Understanding how DNS information supports reconnaissance.
 
 Purpose: To examine HTTP response headers returned by web servers.
 
-Activities:
+# Activities:
 
 Inspecting HTTP response headers.
 
